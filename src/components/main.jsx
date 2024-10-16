@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Pagination from './pagination.jsx'; 
-import './main.css'; 
-import './blog.css'; // Include blog styling
+import './main.css';
 
 export default function Main({ categoryId, tagId }) {
     const [posts, setPosts] = useState([]);
