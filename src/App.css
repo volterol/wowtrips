@@ -1,0 +1,55 @@
+
+
+.App {
+  
+  font-family: 'Roboto', sans-serif;
+  background-color: #ebeff4;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  max-width: 1270px;
+  margin: 20px auto;
+  align-items: stretch;
+}
+
+.main-content a {
+  font-weight: 500 !important;
+  color: #2698bb !important;
+  text-decoration: inherit !important;
+}
+.main-content a:hover {
+  color: #4d63c2 !important;
+}
+
+.main-content a:active {
+  color: #312ecc !important; /* Color for active (clicked) links */
+}
+
+.left-content {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.right-content {
+  flex: 1; 
+  min-height: 300px; 
+  padding: 0px 20px;
+  width: 340px;
+}
+
+@media (max-width: 910px) {
+  .main-content {
+    flex-direction: column;
+    
+  }
+
+  .right-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
