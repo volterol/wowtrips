@@ -1,6 +1,8 @@
 import React from 'react';
 import './rightpanel.css';
 
+const apiDomain = `https://13.51.12.49`;
+
 export default function RightPanel() {
     return (
         <div className="right-panel shadow-lg">
@@ -22,7 +24,7 @@ export default function RightPanel() {
                   decoding="async"
                   width="480"
                   height="300"
-                  src="https://wowtrips.eu/wp-content/uploads/2023/06/photo_2023-06-09_15-19-25-e1690386556873-480x300.jpg"
+                  src ={`${apiDomain}/wp-content/uploads/2023/06/photo_2023-06-09_15-19-25-e1690386556873-480x300.jpg`}
                   alt="Oleg and Veronica in Yucatan"
                   className="object-cover"
                 />
@@ -62,7 +64,7 @@ export default function RightPanel() {
                     decoding="async"
                     width="64"
                     height="64"
-                    src="https://wowtrips.eu/wp-content/uploads/2023/05/facebook2-1.png"
+                    src ={`${apiDomain}/wp-content/uploads/2023/05/facebook2-1.png`}
                     alt="Facebook Logo"
                     className=""
                   />
@@ -81,7 +83,7 @@ export default function RightPanel() {
             <form
               role="search"
               method="get"
-              action="https://wowtrips.eu/"
+              action={`${apiDomain}`}
               className="w-full flex items-center"
             >
               <label htmlFor="wp-block-search__input-1" className="mr-2 text-gray-700">
@@ -137,7 +139,7 @@ export default function RightPanel() {
               </p>
               <p>
                 <a
-                  href="https://wowtrips.eu/go/discovercars"
+                  href={`${apiDomain}/go/discovercars`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

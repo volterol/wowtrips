@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'; // Import useParams
 import './article.css';
 
+const apiDomain = `https://13.51.12.49`;
+
 const Page = () => {
     const { slug } = useParams(); // Extract the slug from the URL
     const [page, setPage] = useState(null);
@@ -14,7 +16,7 @@ const Page = () => {
             setLoading(true);
             try {
                 // Fetch the page by slug
-                const url = `https://wowtrips.eu/wp-json/wp/v2/pages?slug=${slug}`; // Use the slug
+                const url = `${apiDomain}/wp-json/wp/v2/pages?slug=${slug}`; // Use the slug
                 const response = await axios.get(url);
                 const pageData = Array.isArray(response.data) ? response.data[0] : response.data;
                 setPage(pageData);  // Set the page data

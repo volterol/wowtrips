@@ -14,12 +14,13 @@ export default function Main({ categoryId, tagId }) {
     const [tagName, setTagName] = useState('');
     const [categoryDescription, setCategoryDescription] = useState('');
     const [tagDescription, setTagDescription] = useState('');
+    const apiDomain = `https://13.51.12.49`;
 
     // Fetch posts and descriptions
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true);
-            let apiUrl = `https://wowtrips.eu/wp-json/wp/v2/posts?_embed`; // Base URL for fetching posts
+            let apiUrl = apiDomain + `/wp-json/wp/v2/posts?_embed`; // Base URL for fetching posts
 
             // Add filters for category and tag if provided
             if (categoryId) {
@@ -52,7 +53,7 @@ export default function Main({ categoryId, tagId }) {
         const fetchCategoryName = async () => {
             if (categoryId) {
                 try {
-                    const response = await axios.get(`https://wowtrips.eu/wp-json/wp/v2/categories/${categoryId}`);
+                    const response = await axios.get(apiDomain +`/wp-json/wp/v2/categories/${categoryId}`);
                     setCategoryName(response.data.name); // set category name
                 } catch (error) {
                     console.error('Error fetching category name:', error);
@@ -63,7 +64,7 @@ export default function Main({ categoryId, tagId }) {
         const fetchTagName = async () => {
             if (tagId) {
                 try {
-                    const response = await axios.get(`https://wowtrips.eu/wp-json/wp/v2/categories/${tagId}`);
+                    const response = await axios.get(apiDomain + `/wp-json/wp/v2/categories/${tagId}`);
                     setTagName(response.data.name); // set category name
                 } catch (error) {
                     console.error('Error fetching tag name:', error);
@@ -74,7 +75,7 @@ export default function Main({ categoryId, tagId }) {
         const fetchCategoryDescription = async () => {
             if (categoryId) {
                 try {
-                    const response = await axios.get(`https://wowtrips.eu/wp-json/wp/v2/categories/${categoryId}`);
+                    const response = await axios.get(apiDomain + `/wp-json/wp/v2/categories/${categoryId}`);
                     setCategoryDescription(response.data.description); // Set category description
                 } catch (error) {
                     console.error('Error fetching category description:', error);
@@ -85,7 +86,7 @@ export default function Main({ categoryId, tagId }) {
         const fetchTagDescription = async () => {
             if (tagId) {
                 try {
-                    const response = await axios.get(`https://wowtrips.eu/wp-json/wp/v2/tags/${tagId}`);
+                    const response = await axios.get(apiDomain + `/wp-json/wp/v2/tags/${tagId}`);
                     setTagDescription(response.data.description); // Set tag description
                 } catch (error) {
                     console.error('Error fetching tag description:', error);

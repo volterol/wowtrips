@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'; // Assuming you're using React Rou
 import axios from 'axios';
 import './article.css'; // Optional: for custom styles
 
+const apiDomain = `https://13.51.12.49`;
+
 export default function Article() {
   const { slug } = useParams(); // Get slug from URL params (e.g., local-gems-discovering-affordable-and-authentic-experiences)
   const [post, setPost] = useState(null);
@@ -13,7 +15,7 @@ export default function Article() {
     // Fetch the post by slug from the WordPress REST API
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`https://wowtrips.eu/wp-json/wp/v2/posts?slug=${slug}&_embed`);
+        const response = await axios.get(`${apiDomain}/wp-json/wp/v2/posts?slug=${slug}&_embed`);
         if (response.data.length > 0) {
           setPost(response.data[0]); // Assuming the first result is the correct post
         } else {

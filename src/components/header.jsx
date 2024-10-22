@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+const apiDomain = `https://13.51.12.49`;
+
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     
@@ -12,7 +14,7 @@ const Header = () => {
             <div className="container mx-auto max-w-[1270px]">
                 <div className="logo"><a href="https://wowtrips.eu">
                     <picture>
-                        <img src="https://wowtrips.eu/wp-content/uploads/2023/07/default-e1689249642533.png" alt="wowtrips.eu"></img>
+                        <img src={`${apiDomain}/wp-content/uploads/2023/07/default-e1689249642533.png`} alt="wowtrips.eu"></img>
                     </picture>
                     
                 </a></div>
@@ -27,7 +29,7 @@ const Header = () => {
                     <li><Link to="/" className="block py-2 px-1 text-black">Main Page</Link></li>
                     <li><Link to="/cheap-flights" className="block py-2 px-1 text-black">Cheap Flights</Link></li>
                     <li><Link to="/travel-tips" className="block py-2 px-1 text-black">Travel Tips</Link></li>
-                    <li><a href="https://wowtrips.eu/go/discovercars" className="block py-2 px-1 text-black">Car Rent</a></li>
+                    <li><a href={`${apiDomain}/go/discovercars`} className="block py-2 px-1 text-black">Car Rent</a></li>
                     <li><Link to="/page/travel-resources" className="block py-2 px-1 text-black">Travel Resources</Link></li>
                     <li><Link to="/page/about-us" className="block py-2 px-1 text-black">About us</Link></li>
                 </ul>
