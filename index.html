@@ -1,12 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZN1KWC7TK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XZN1KWC7TK');
+    </script>
+
+    <script>
+      (function (s, t, a, y, twenty, two) {
+        s.Stay22 = s.Stay22 || {};
+
+        // Just fill out your configs here
+        s.Stay22.params = {
+          aid: "wowtrips",
+        };
+
+        // Leave this part as-is;
+        twenty = t.createElement(a);
+        two = t.getElementsByTagName(a)[0];
+        twenty.async = 1;
+        twenty.src = y;
+        two.parentNode.insertBefore(twenty, two);
+      })(window, document, "script", "https://scripts.stay22.com/letmeallez.js");
+    </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>wowtrips.eu | Baltic Travel Blog: Hand-Picked Flights and Hotel Deals</title>
+    <link rel="icon" href="https://wp.wowtrips.eu/wp-content/uploads/2023/02/cropped-default-32x32.png" sizes="32x32">
+<link rel="icon" href="https://wp.wowtrips.eu/wp-content/uploads/2023/02/cropped-default-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://wp.wowtrips.eu/wp-content/uploads/2023/02/cropped-default-180x180.png">
   </head>
-  <body>
+    <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

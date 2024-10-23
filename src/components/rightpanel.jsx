@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './rightpanel.css';
 
 const apiDomain = `https://wp.wowtrips.eu`;
 
 export default function RightPanel() {
+
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate(); // hook 
+
+  const handleSearch = async (e) => {
+    e.preventDefault(); // Prevent the default form submission
+    navigate(`/search?query=${encodeURIComponent(query)}`);
+  };
+  
+
     return (
         <div className="right-panel shadow-lg">
           {/* About Us Section */}
@@ -80,33 +91,35 @@ export default function RightPanel() {
     
           {/* Search Section */}
           <section id="block-66" className="mb-6">
-            <form
-              role="search"
-              method="get"
-              action={`${apiDomain}`}
-              className="w-full flex items-center"
-            >
-              <label htmlFor="wp-block-search__input-1" className="mr-2 text-gray-700">
-              </label>
-              <div className="flex-grow">
-                <input
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="wp-block-search__input-1"
-                  placeholder=""
-                  type="search"
-                  name="s"
-                  required
-                />
-              </div>
-              <button
-                aria-label="Search"
-                className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
-          </section>
+           <form
+            role="search"
+            onSubmit={handleSearch} // Use handleSearch on form submission
+            className="w-full flex items-center"
+           >
+           <label htmlFor="wp-block-search__input-1" className="mr-2 text-gray-700">
+            {/* Optional: Add a label for accessibility */}
+           </label>
+           <div className="flex-grow">
+            <input
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="wp-block-search__input-1"
+              placeholder="Search..."
+              type="search"
+              name="s"
+              value={query} // Controlled input
+              onChange={(e) => setQuery(e.target.value)} // Update state on change
+              required
+            />
+           </div>
+           <button
+            aria-label="Search"
+            className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            type="submit"
+           >
+            Search
+          </button>
+        </form>
+      </section>
     
           {/* Separator */}
           <section id="block-77" className="mb-6">

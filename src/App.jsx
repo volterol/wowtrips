@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
 import RightPanel from './components/rightpanel';
+import SearchResults from './components/SearchResults';
 import Footer from './components/footer';
 import Main from './components/main';        
 import Article from './components/article'; 
@@ -38,6 +39,8 @@ function App() {
 
                             {/* Route for specific page slug */}
                             <Route path="/page/:slug" element={<Page />} />
+
+                            <Route path="/search" element={<SearchResults />} />
                         </Routes>
                     </div>
                     <div className="right-content">
