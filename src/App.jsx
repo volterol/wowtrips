@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
 import RightPanel from './components/rightpanel';
 import Footer from './components/footer';
-import Main from './components/main';        // Main component for the article list
-import Article from './components/article';  // Article component
+import Main from './components/main';        
+import Article from './components/article'; 
 import Page from './components/page';
 import './App.css';
 

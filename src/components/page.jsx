@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'; // Import useParams
 import './article.css';
 
-const apiDomain = `https://13.51.12.49`;
+const apiDomain = `https://wp.wowtrips.eu`;
 
 const Page = () => {
     const { slug } = useParams(); // Extract the slug from the URL

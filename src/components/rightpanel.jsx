@@ -1,7 +1,7 @@
 import React from 'react';
 import './rightpanel.css';
 
-const apiDomain = `https://13.51.12.49`;
+const apiDomain = `https://wp.wowtrips.eu`;
 
 export default function RightPanel() {
     return (

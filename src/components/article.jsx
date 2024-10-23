@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // Assuming you're using React Router
+import { useParams } from 'react-router-dom'; 
 import axios from 'axios';
-import './article.css'; // Optional: for custom styles
+import './article.css'; 
 
-const apiDomain = `https://13.51.12.49`;
+const apiDomain = `https://wp.wowtrips.eu`;
 
 export default function Article() {
-  const { slug } = useParams(); // Get slug from URL params (e.g., local-gems-discovering-affordable-and-authentic-experiences)
+  const { slug } = useParams(); // Get slug from URL params 
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

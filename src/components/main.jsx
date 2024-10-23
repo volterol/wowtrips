@@ -14,7 +14,7 @@ export default function Main({ categoryId, tagId }) {
     const [tagName, setTagName] = useState('');
     const [categoryDescription, setCategoryDescription] = useState('');
     const [tagDescription, setTagDescription] = useState('');
-    const apiDomain = `https://13.51.12.49`;
+    const apiDomain = `https://wp.wowtrips.eu`;
 
     // Fetch posts and descriptions
     useEffect(() => {

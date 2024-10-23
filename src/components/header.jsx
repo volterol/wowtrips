@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const apiDomain = `https://13.51.12.49`;
+const apiDomain = `https://wp.wowtrips.eu`;
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
